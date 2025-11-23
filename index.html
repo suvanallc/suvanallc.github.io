@@ -1,298 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Suvana Construction LLC — Middletown, DE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suvana Construction LLC | Handyman & General Construction</title>
   <style>
-    :root{
-      --accent:#0b6b4a;
-      --accent-dark:#05523a;
-      --muted:#666;
-      --card-bg:#fff;
-      --page-bg:#f5f6f7;
-      --max-width:1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:var(--page-bg);
-      color:#222;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* Header */
-    header{
-      background:#fff;
-      border-bottom:1px solid #e6e6e6;
-      position:sticky;
-      top:0;
-      z-index:20;
-    }
-    .topbar{
-      max-width:var(--max-width);
-      margin:0 auto;
-      padding:18px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color:inherit;
-    }
-    .logo{
-      width:56px;
-      height:56px;
-      display:inline-grid;
-      place-items:center;
-      border-radius:8px;
-      background:linear-gradient(180deg,#e9f5ef,#dff0e7);
-      box-shadow:0 1px 0 rgba(0,0,0,0.04);
-      font-weight:700;
-      color:var(--accent);
-    }
-    .brand h1{
-      font-size:18px;
-      margin:0;
-      letter-spacing:0.2px;
-    }
-    nav a{
-      margin-left:18px;
-      color:#333;
-      text-decoration:none;
-      font-weight:600;
-      font-size:14px;
+    body {
+      background-color: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
     }
 
-    /* Hero */
-    .hero{
-      max-width:var(--max-width);
-      margin:26px auto;
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:22px;
-      align-items:center;
-      padding:0 20px;
-    }
-    .hero-card{
-      background:var(--card-bg);
-      border-radius:12px;
-      overflow:hidden;
-      box-shadow:0 6px 18px rgba(17,17,17,0.06);
-      display:flex;
-      flex-direction:column;
-    }
-    .hero-media{
-      width:100%;
-      height:420px;
-      object-fit:cover;
-      display:block;
-      background:#ddd;
-    }
-    .hero-inner{
-      padding:28px;
-    }
-    .eyebrow{display:inline-block;background:#eef7f2;color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px}
-    .hero-title{
-      margin-top:12px;
-      font-size:32px;
-      line-height:1.06;
-      color:#0b3b2b;
-    }
-    .hero-sub{
-      margin-top:10px;color:var(--muted);font-size:16px;
-    }
-    .cta-row{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      display:inline-block;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700;
-      background:var(--accent);color:#fff;
-      box-shadow:0 6px 12px rgba(11,107,74,0.12);
-    }
-    .btn.secondary{background:transparent;color:var(--accent);border:1.5px solid rgba(11,107,74,0.12)}
-
-    /* Services grid */
-    .services{
-      max-width:var(--max-width);
-      margin:26px auto;
-      padding:0 20px 40px;
-      display:grid;
-      gap:18px;
-      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .card{
-      background:var(--card-bg);
-      padding:18px;
-      border-radius:12px;
-      box-shadow:0 6px 18px rgba(17,17,17,0.06);
-      display:flex;
-      gap:14px;
-      align-items:flex-start;
-    }
-    .thumb{
-      width:110px;height:80px;flex:0 0 110px;border-radius:8px;object-fit:cover;background:#eee;
-    }
-    .card h3{margin:0 0 6px;font-size:18px;color:#0b3b2b}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-
-    /* About + contact */
-    .about-contact{
-      max-width:var(--max-width);
-      margin:28px auto 80px;
-      padding:0 20px;
-      display:grid;
-      grid-template-columns:1fr 340px;
-      gap:20px;
-    }
-    .about{
-      background:var(--card-bg);
-      padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(17,17,17,0.06);
-    }
-    .contact{
-      background:linear-gradient(180deg,#f7fff9,#fff);
-      padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(17,17,17,0.06);
-    }
-    .contact p{margin:8px 0;color:var(--muted)}
-    .contact .phone{font-weight:800;color:var(--accent);font-size:18px}
-    .small{font-size:13px;color:#777;margin-top:8px}
-
-    footer{
-      margin-top:40px;
-      padding:26px 20px;
-      text-align:center;
-      color:#666;
+    header {
+      background: linear-gradient(135deg, #1f3b57, #2563eb);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
     }
 
-    /* Responsive */
-    @media (max-width:800px){
-      .hero-media{height:300px}
-      .about-contact{grid-template-columns:1fr}
-      nav a{display:none}
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    header p {
+      margin: 0.25rem 0;
+    }
+
+    .contact {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem 3rem;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .intro h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro p {
+      font-size: 0.98rem;
+      color: #444;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-content {
+      padding: 1rem 1.1rem 1.3rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-content h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #1f2933;
+    }
+
+    .service-content p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background-color: #111827;
+      color: #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="topbar">
-      <a class="brand" href="#">
-        <div class="logo">S</div>
-        <div>
-          <h1>Suvana Construction LLC</h1>
-          <div style="font-size:12px;color:#666;margin-top:2px">Middletown, DE — Handyman & Construction</div>
-        </div>
-      </a>
-      <nav aria-label="Primary navigation">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- HERO -->
-  <main>
-    <section class="hero" aria-label="Hero">
-      <div class="hero-card" role="region" aria-labelledby="hero-title">
-        <!-- AI-generated hero image (local file produced earlier) -->
-        <img class="hero-media" src="GPT.png"
-             alt="Suvana Construction worker using a drill — Middletown, DE" />
+<header>
+  <h1>Suvana Construction LLC</h1>
+  <p>Handyman & General Construction Company in Middletown, DE</p>
+  <div class="contact">
+    <p>Phone: 123-456-7891 &nbsp;|&nbsp; Email: SuvanaConstruction@gmail.com</p>
+  </div>
+</header>
 
-        <div class="hero-inner">
-          <span class="eyebrow">Local • Licensed • Insured</span>
-          <h2 id="hero-title" class="hero-title">Suvana Construction LLC</h2>
-          <div class="hero-sub">Trusted handyman and general contracting services serving Middletown, Delaware and surrounding areas.</div>
+<main>
+  <section class="intro">
+    <h2>Our Services</h2>
+    <p>
+      Suvana Construction LLC provides reliable handyman and general construction
+      services for homes in and around Middletown, DE. From small repairs to full
+      remodels, we take care of your project with quality workmanship.
+    </p>
+  </section>
 
-          <div class="cta-row">
-            <a class="btn" href="mailto:SuvanaConstruction@gmail.com?subject=Service%20Inquiry">Get a Quote</a>
-            <a class="btn secondary" href="#services">Our Services</a>
-          </div>
-        </div>
+  <section class="services-grid">
+
+    <!-- Kitchen Remodel -->
+    <article class="service-card">
+      <img src="kitchen_remodeling.png" alt="Handyman remodeling a modern kitchen" />
+      <div class="service-content">
+        <h3>Kitchen Remodel</h3>
+        <p>
+          Complete kitchen updates including cabinets, countertops, fixtures,
+          backsplashes, and layout improvements to create a modern, functional space.
+        </p>
       </div>
-    </section>
+    </article>
 
-    <!-- Services -->
-    <section id="services" class="services" aria-label="Services">
-      <article class="card">
-        <img class="thumb" src="/mnt/data/A_webpage_for_Suvana_Construction_LLC,_a_handyman_.png" alt="home repairs thumbnail">
-        <div>
-          <h3>Home Repairs</h3>
-          <p>From leaky faucets and drywall repair to door adjustments and minor electrical fixes — quick and reliable repairs.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img class="thumb" src="/mnt/data/A_webpage_for_Suvana_Construction_LLC,_a_handyman_.png" alt="remodeling thumbnail">
-        <div>
-          <h3>Remodeling & Renovations</h3>
-          <p>Kitchen & bath updates, trim and carpentry, flooring replacement, small-scale remodels with attention to detail.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img class="thumb" src="/mnt/data/A_webpage_for_Suvana_Construction_LLC,_a_handyman_.png" alt="handyman thumbnail">
-        <div>
-          <h3>General Handyman</h3>
-          <p>Regular maintenance, installations, deck/porch repairs, shelving, and general property upkeep.</p>
-        </div>
-      </article>
-    </section>
-
-    <!-- About + Contact -->
-    <section class="about-contact">
-      <div id="about" class="about" aria-labelledby="about-heading">
-        <h2 id="about-heading">About Suvana Construction LLC</h2>
-        <p class="small">Suvana Construction LLC is a Middletown-based handyman and general contracting company focused on delivering professional, dependable, and affordable services to homeowners and small businesses across New Castle County.</p>
-
-        <p>We specialize in fast-response repairs, small to medium remodeling projects, and custom carpentry. Our team places a strong emphasis on clear communication, quality materials, and tidy job sites. Whether you need a one-off repair or recurring maintenance, we tailor our services to fit your schedule and budget.</p>
-
-        <h3 style="margin-top:14px">Why choose us</h3>
-        <ul style="margin:8px 0 0 18px;color:var(--muted)">
-          <li>Local — Middletown, DE based technicians</li>
-          <li>Licensed & insured for peace of mind</li>
-          <li>Transparent estimates & timely communication</li>
-        </ul>
+    <!-- Drywall Installation -->
+    <article class="service-card">
+      <img src="drywall.png" alt="Worker installing drywall panels on interior wall" />
+      <div class="service-content">
+        <h3>Drywall Installation</h3>
+        <p>
+          New drywall, repairs, and finishing for smooth, paint-ready walls and ceilings
+          in basements, additions, or damaged areas.
+        </p>
       </div>
+    </article>
 
-      <aside id="contact" class="contact" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Get in touch</h2>
-        <p class="phone">123-456-7891</p>
-        <p><strong>Email:</strong> <a href="mailto:SuvanaConstruction@gmail.com">SuvanaConstruction@gmail.com</a></p>
-        <p><strong>Location:</strong> Middletown, Delaware</p>
+    <!-- Plumbing Work -->
+    <article class="service-card">
+      <img src="plumbing.png" alt="Handyman working on pipes under a sink" />
+      <div class="service-content">
+        <h3>Plumbing Work</h3>
+        <p>
+          Fixture installations, minor leak repairs, and plumbing upgrades for kitchens,
+          bathrooms, and laundry areas.
+        </p>
+      </div>
+    </article>
 
-        <div style="margin-top:12px">
-          <a class="btn" href="mailto:SuvanaConstruction@gmail.com?subject=Service%20Request">Request Service</a>
-        </div>
+    <!-- Electrical Work -->
+    <article class="service-card">
+      <img src="electrical.png" alt="Electrician installing an outlet and checking wiring" />
+      <div class="service-content">
+        <h3>Electrical Work</h3>
+        <p>
+          Light fixture replacements, outlet and switch installs, fan mounting, and
+          small electrical upgrades done safely and to code.
+        </p>
+      </div>
+    </article>
 
-        <div class="small" style="margin-top:14px">
-          <strong>Business hours:</strong><br/>
-          Mon-Fri: 8:00 AM — 6:00 PM<br/>
-          Sat: 9:00 AM — 2:00 PM
-        </div>
-      </aside>
-    </section>
-  </main>
+    <!-- Hardwood / Vinyl Flooring -->
+    <article class="service-card">
+      <img src="flooring.png" alt="Worker installing plank flooring in a living room" />
+      <div class="service-content">
+        <h3>Hardwood &amp; Vinyl Flooring</h3>
+        <p>
+          Professional installation of hardwood and luxury vinyl plank flooring to give
+          your home a durable, updated look.
+        </p>
+      </div>
+    </article>
 
-  <footer>
-    &copy; <span id="year"></span> Suvana Construction LLC — Middletown, DE • <a href="mailto:SuvanaConstruction@gmail.com">Email</a>
-  </footer>
+    <!-- Fireplace & TV Wall Feature -->
+    <article class="service-card">
+      <img src="fireplace-TV.png" alt="Custom TV wall with electric fireplace and built-ins" />
+      <div class="service-content">
+        <h3>Fireplace &amp; TV Wall Feature</h3>
+        <p>
+          Custom TV and fireplace feature walls with framing, finishes, and built-ins to
+          create a clean, modern focal point.
+        </p>
+      </div>
+    </article>
 
-  <script>
-    // small enhancements
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const t = document.querySelector(a.getAttribute('href'));
-        if(t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
-      });
-    });
-  </script>
+    <!-- Finish Basement -->
+    <article class="service-card">
+      <img src="finish-basement.png" alt="Finished basement with family room and lighting" />
+      <div class="service-content">
+        <h3>Finish Basement</h3>
+        <p>
+          Turn your unfinished basement into livable space with framing, drywall,
+          flooring, lighting, and trim work.
+        </p>
+      </div>
+    </article>
+
+    <!-- Painting -->
+    <article class="service-card">
+      <img src="painting-service.png" alt="Painter rolling fresh paint on an interior wall" />
+      <div class="service-content">
+        <h3>Painting</h3>
+        <p>
+          Interior and accent wall painting with proper prep, caulking, and clean lines
+          for a fresh, finished look throughout your home.
+        </p>
+      </div>
+    </article>
+
+    <!-- Remodeling -->
+    <article class="service-card">
+      <img src="remodeling.png" alt="Handyman remodeling interior walls with new framing" />
+      <div class="service-content">
+        <h3>Remodeling</h3>
+        <p>
+          General home remodeling including room updates, wall changes, trim work, and
+          layout improvements to match your vision.
+        </p>
+      </div>
+    </article>
+
+    <!-- Full Handyman Service Scenes -->
+    <article class="service-card">
+      <img src="full_handyman services.png" alt="Handyman with tools performing various household repairs" />
+      <div class="service-content">
+        <h3>Full Handyman Service</h3>
+        <p>
+          Small repairs, punch-list items, fixture changes, and day-to-day home
+          maintenance handled quickly and professionally.
+        </p>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Suvana Construction LLC. All Rights Reserved.
+</footer>
+
+<script>
+  // Automatically show current year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
