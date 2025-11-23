@@ -5,112 +5,296 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Suvana Construction LLC | Handyman & General Construction</title>
   <style>
+    :root {
+      --primary: #1f3b57;
+      --primary-light: #2563eb;
+      --accent: #f59e0b;
+      --bg: #f4f5f7;
+      --text: #111827;
+      --muted: #6b7280;
+      --card-bg: #ffffff;
+      --radius: 10px;
+      --shadow-soft: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
-      background-color: #f5f5f5;
-      color: #222;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
+    /* Layout */
     header {
-      background: linear-gradient(135deg, #1f3b57, #2563eb);
+      background: radial-gradient(circle at top left, var(--primary-light), var(--primary));
       color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
-    header h1 {
-      font-size: 2.2rem;
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 1rem;
+    }
+
+    .nav-links a {
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, #ffffff, #e5e7eb);
+      padding: 3.5rem 1.5rem 3rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
       margin-bottom: 0.5rem;
-      letter-spacing: 0.05em;
     }
 
-    header p {
-      margin: 0.25rem 0;
+    .hero h1 span {
+      color: var(--primary-light);
     }
 
-    .contact {
-      margin-top: 0.75rem;
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      font-size: 0.98rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(37,99,235,0.08);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-primary {
+      background: var(--primary-light);
+      color: #ffffff;
+      border-radius: 999px;
+      border: none;
+      padding: 0.7rem 1.4rem;
       font-size: 0.95rem;
-      opacity: 0.95;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(37,99,235,0.35);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .hero-contact {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .hero-contact strong {
+      color: var(--text);
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.25rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card h2 {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .hero-list li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 0.4rem;
     }
 
     main {
       max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1rem 3rem;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3.5rem;
     }
 
-    .intro {
+    .section-header {
       text-align: center;
       margin-bottom: 2rem;
     }
 
-    .intro h2 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
+    .section-header h2 {
+      font-size: 1.7rem;
+      margin-bottom: 0.4rem;
     }
 
-    .intro p {
-      font-size: 0.98rem;
-      color: #444;
+    .section-header p {
+      font-size: 0.95rem;
+      color: var(--muted);
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      gap: 1.7rem;
     }
 
     .service-card {
-      background-color: #ffffff;
-      border-radius: 8px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      box-shadow: var(--shadow-soft);
       display: flex;
       flex-direction: column;
-      height: 100%;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, translate 0.15s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.12);
     }
 
     .service-card img {
       width: 100%;
-      height: 180px;
+      height: 190px;
       object-fit: cover;
       display: block;
     }
 
     .service-content {
-      padding: 1rem 1.1rem 1.3rem;
-      flex: 1;
+      padding: 1rem 1.1rem 1.2rem;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 0.4rem;
+      flex: 1;
+    }
+
+    .service-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--primary);
+      font-weight: 600;
     }
 
     .service-content h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: #1f2933;
+      font-size: 1.05rem;
+      margin: 0;
     }
 
     .service-content p {
-      font-size: 0.95rem;
-      color: #444;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .service-meta {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .cta-strip {
+      margin-top: 3rem;
+      padding: 1.5rem 1.8rem;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      border-radius: 14px;
+      color: #f9fafb;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .cta-strip h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .cta-strip p {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .cta-strip .btn-primary {
+      box-shadow: 0 10px 24px rgba(15,23,42,0.4);
+      white-space: nowrap;
     }
 
     footer {
+      background: #020617;
+      color: #9ca3af;
       text-align: center;
-      padding: 1.5rem 1rem;
-      background-color: #111827;
-      color: #e5e7eb;
-      font-size: 0.9rem;
+      padding: 1.6rem 1rem 1.8rem;
+      font-size: 0.85rem;
     }
 
     footer a {
@@ -126,154 +310,225 @@
 <body>
 
 <header>
-  <h1>Suvana Construction LLC</h1>
-  <p>Handyman & General Construction Company in Middletown, DE</p>
-  <div class="contact">
-    <p>Phone: 123-456-7891 &nbsp;|&nbsp; Email: SuvanaConstruction@gmail.com</p>
+  <div class="nav">
+    <div class="brand">SUVANA CONSTRUCTION LLC</div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
 </header>
 
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">Handyman &amp; General Construction &bull; Middletown, DE</div>
+      <h1>Reliable Home <span>Remodeling &amp; Repair</span> You Can Trust.</h1>
+      <p>
+        Suvana Construction LLC provides complete handyman and construction services
+        for busy homeowners in and around Middletown, Delaware. From quick fixes to
+        full remodels, we keep your project clean, on-time, and on-budget.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">
+          Get a free estimate
+          <span>&rarr;</span>
+        </a>
+        <div class="hero-contact">
+          <strong>Call:</strong> 123-456-7891<br />
+          <strong>Email:</strong> SuvanaConstruction@gmail.com
+        </div>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <h2>Why homeowners choose Suvana</h2>
+      <ul class="hero-list">
+        <li>Locally owned &amp; operated in Middletown, DE</li>
+        <li>Kitchen, bath, flooring, basements &amp; more</li>
+        <li>Respectful crew &amp; clean job sites</li>
+        <li>Clear communication from quote to final walk-through</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
 <main>
-  <section class="intro">
-    <h2>Our Services</h2>
-    <p>
-      Suvana Construction LLC provides reliable handyman and general construction
-      services for homes in and around Middletown, DE. From small repairs to full
-      remodels, we take care of your project with quality workmanship.
-    </p>
+  <section id="services">
+    <div class="section-header">
+      <h2>Our Core Services</h2>
+      <p>
+        One company for all your home projects &mdash; from fresh paint and flooring
+        to full kitchen and basement remodels.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Kitchen Remodel -->
+      <article class="service-card">
+        <img src="kitchen-remodel.jpg" alt="Handyman installing countertops in a bright modern kitchen" />
+        <div class="service-content">
+          <span class="service-label">Kitchen Remodel</span>
+          <h3>Modern, functional kitchens</h3>
+          <p>
+            Full kitchen updates including cabinets, countertops, lighting, and
+            backsplashes to create a bright, efficient cooking space for your family.
+          </p>
+          <div class="service-meta">Demo • layout changes • finishes • punch-list</div>
+        </div>
+      </article>
+
+      <!-- Drywall Installation -->
+      <article class="service-card">
+        <img src="drywall-installation.jpg" alt="Worker in hard hat installing drywall sheet in new room" />
+        <div class="service-content">
+          <span class="service-label">Drywall</span>
+          <h3>New walls &amp; smooth repairs</h3>
+          <p>
+            Professional hanging, taping, and finishing for new rooms, additions, or
+            patching damaged walls so they’re ready for paint.
+          </p>
+          <div class="service-meta">Hanging • taping • skim coat • texture repair</div>
+        </div>
+      </article>
+
+      <!-- Plumbing Work -->
+      <article class="service-card">
+        <img src="plumbing-work.jpg" alt="Handyman tightening pipes under a kitchen sink" />
+        <div class="service-content">
+          <span class="service-label">Plumbing</span>
+          <h3>Small plumbing projects</h3>
+          <p>
+            Install or replace faucets, disposals, supply lines, and traps, and fix
+            minor leaks to keep your kitchen and bath running smoothly.
+          </p>
+          <div class="service-meta">Fixtures • supply lines • drains • disposals</div>
+        </div>
+      </article>
+
+      <!-- Electrical Work -->
+      <article class="service-card">
+        <img src="electrical-work.jpg" alt="Electrician testing wiring and installing a wall outlet" />
+        <div class="service-content">
+          <span class="service-label">Electrical</span>
+          <h3>Safe, code-ready wiring</h3>
+          <p>
+            Light fixture swaps, outlets, dimmers, and small electrical upgrades
+            completed with safety and code compliance in mind.
+          </p>
+          <div class="service-meta">Lighting • outlets • switches • fans</div>
+        </div>
+      </article>
+
+      <!-- Hardwood / Vinyl Flooring -->
+      <article class="service-card">
+        <img src="hardwood-vinyl-flooring.jpg" alt="Hands installing plank flooring in a living room" />
+        <div class="service-content">
+          <span class="service-label">Flooring</span>
+          <h3>Hardwood &amp; vinyl plank</h3>
+          <p>
+            Durable, easy-care floors installed with clean transitions and tight
+            seams for living rooms, kitchens, basements, and more.
+          </p>
+          <div class="service-meta">Prep • underlayment • install • trim</div>
+        </div>
+      </article>
+
+      <!-- Fireplace & TV Wall Feature -->
+      <article class="service-card">
+        <img src="fireplace-tv-feature.jpg" alt="Custom TV wall with wood accent panels and electric fireplace" />
+        <div class="service-content">
+          <span class="service-label">Fireplace &amp; TV Wall</span>
+          <h3>Custom feature walls</h3>
+          <p>
+            Build a clean, modern focal wall with TV mounting, recessed fireplace,
+            and wood or stone accents to elevate your living room.
+          </p>
+          <div class="service-meta">Framing • wiring • finishes • TV mounting</div>
+        </div>
+      </article>
+
+      <!-- Finish Basement -->
+      <article class="service-card">
+        <img src="finish-basement.jpg" alt="Handyman doing touch ups in a finished basement family room" />
+        <div class="service-content">
+          <span class="service-label">Basement Finish</span>
+          <h3>More livable space</h3>
+          <p>
+            Turn your unfinished basement into a family room, playroom, office, or
+            guest suite with walls, flooring, lighting, and trim.
+          </p>
+          <div class="service-meta">Design • framing • drywall • flooring</div>
+        </div>
+      </article>
+
+      <!-- Painting -->
+      <article class="service-card">
+        <img src="painting-service.jpg" alt="Painter rolling fresh paint onto an interior wall" />
+        <div class="service-content">
+          <span class="service-label">Painting</span>
+          <h3>Crisp, clean finishes</h3>
+          <p>
+            Interior painting with thorough prep, caulking, and sharp lines to freshen
+            up single rooms or your entire home.
+          </p>
+          <div class="service-meta">Walls • ceilings • trim • doors</div>
+        </div>
+      </article>
+
+      <!-- Remodeling -->
+      <article class="service-card">
+        <img src="remodeling-service.jpg" alt="Handyman framing a new interior wall during remodel" />
+        <div class="service-content">
+          <span class="service-label">Remodeling</span>
+          <h3>Room-by-room upgrades</h3>
+          <p>
+            Interior remodeling including wall changes, layout adjustments, new
+            finishes, and trim carpentry tailored to your ideas and budget.
+          </p>
+          <div class="service-meta">Design support • framing • finishes</div>
+        </div>
+      </article>
+
+      <!-- Full Handyman Service Scenes -->
+      <article class="service-card">
+        <img src="handyman-services-collage.jpg" alt="Collage of handyman performing various home repairs" />
+        <div class="service-content">
+          <span class="service-label">Handyman Services</span>
+          <h3>Small jobs &amp; punch lists</h3>
+          <p>
+            Tackle all the little projects: doors that stick, trim repairs, TV
+            mounting, fixtures, caulking, and general home maintenance.
+          </p>
+          <div class="service-meta">Hourly service • half-day • full-day</div>
+        </div>
+      </article>
+
+    </div>
   </section>
 
-  <section class="services-grid">
-
-    <!-- Kitchen Remodel -->
-    <article class="service-card">
-      <img src="kitchen_remodeling.png" alt="Handyman remodeling a modern kitchen" />
-      <div class="service-content">
-        <h3>Kitchen Remodel</h3>
-        <p>
-          Complete kitchen updates including cabinets, countertops, fixtures,
-          backsplashes, and layout improvements to create a modern, functional space.
-        </p>
-      </div>
-    </article>
-
-    <!-- Drywall Installation -->
-    <article class="service-card">
-      <img src="drywall.png" alt="Worker installing drywall panels on interior wall" />
-      <div class="service-content">
-        <h3>Drywall Installation</h3>
-        <p>
-          New drywall, repairs, and finishing for smooth, paint-ready walls and ceilings
-          in basements, additions, or damaged areas.
-        </p>
-      </div>
-    </article>
-
-    <!-- Plumbing Work -->
-    <article class="service-card">
-      <img src="plumbing.png" alt="Handyman working on pipes under a sink" />
-      <div class="service-content">
-        <h3>Plumbing Work</h3>
-        <p>
-          Fixture installations, minor leak repairs, and plumbing upgrades for kitchens,
-          bathrooms, and laundry areas.
-        </p>
-      </div>
-    </article>
-
-    <!-- Electrical Work -->
-    <article class="service-card">
-      <img src="electrical.png" alt="Electrician installing an outlet and checking wiring" />
-      <div class="service-content">
-        <h3>Electrical Work</h3>
-        <p>
-          Light fixture replacements, outlet and switch installs, fan mounting, and
-          small electrical upgrades done safely and to code.
-        </p>
-      </div>
-    </article>
-
-    <!-- Hardwood / Vinyl Flooring -->
-    <article class="service-card">
-      <img src="flooring.png" alt="Worker installing plank flooring in a living room" />
-      <div class="service-content">
-        <h3>Hardwood &amp; Vinyl Flooring</h3>
-        <p>
-          Professional installation of hardwood and luxury vinyl plank flooring to give
-          your home a durable, updated look.
-        </p>
-      </div>
-    </article>
-
-    <!-- Fireplace & TV Wall Feature -->
-    <article class="service-card">
-      <img src="fireplace-TV.png" alt="Custom TV wall with electric fireplace and built-ins" />
-      <div class="service-content">
-        <h3>Fireplace &amp; TV Wall Feature</h3>
-        <p>
-          Custom TV and fireplace feature walls with framing, finishes, and built-ins to
-          create a clean, modern focal point.
-        </p>
-      </div>
-    </article>
-
-    <!-- Finish Basement -->
-    <article class="service-card">
-      <img src="finish-basement.png" alt="Finished basement with family room and lighting" />
-      <div class="service-content">
-        <h3>Finish Basement</h3>
-        <p>
-          Turn your unfinished basement into livable space with framing, drywall,
-          flooring, lighting, and trim work.
-        </p>
-      </div>
-    </article>
-
-    <!-- Painting -->
-    <article class="service-card">
-      <img src="painting-service.png" alt="Painter rolling fresh paint on an interior wall" />
-      <div class="service-content">
-        <h3>Painting</h3>
-        <p>
-          Interior and accent wall painting with proper prep, caulking, and clean lines
-          for a fresh, finished look throughout your home.
-        </p>
-      </div>
-    </article>
-
-    <!-- Remodeling -->
-    <article class="service-card">
-      <img src="remodeling.png" alt="Handyman remodeling interior walls with new framing" />
-      <div class="service-content">
-        <h3>Remodeling</h3>
-        <p>
-          General home remodeling including room updates, wall changes, trim work, and
-          layout improvements to match your vision.
-        </p>
-      </div>
-    </article>
-
-    <!-- Full Handyman Service Scenes -->
-    <article class="service-card">
-      <img src="full_handyman services.png" alt="Handyman with tools performing various household repairs" />
-      <div class="service-content">
-        <h3>Full Handyman Service</h3>
-        <p>
-          Small repairs, punch-list items, fixture changes, and day-to-day home
-          maintenance handled quickly and professionally.
-        </p>
-      </div>
-    </article>
-
+  <section id="contact" class="cta-strip">
+    <div>
+      <h3>Ready to start your next project?</h3>
+      <p>
+        Share a few details about your kitchen, basement, or repair list and we’ll
+        schedule a convenient time to visit your home in Middletown, DE.
+      </p>
+    </div>
+    <a href="tel:1234567891" class="btn-primary">
+      Call 123-456-7891
+    </a>
   </section>
 </main>
 
 <footer>
-  &copy; <span id="year"></span> Suvana Construction LLC. All Rights Reserved.
+  &copy; <span id="year"></span> Suvana Construction LLC &middot; Middletown, Delaware.
+  Email: <a href="mailto:SuvanaConstruction@gmail.com">SuvanaConstruction@gmail.com</a>
 </footer>
 
 <script>
-  // Automatically show current year in footer
+  // Set current year in footer
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
